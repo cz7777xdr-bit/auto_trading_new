@@ -1,0 +1,26 @@
+# Cursor Project Rules - Auto-Trading Analysis Pipeline
+
+## 🤖 AI 에이전트(Cursor AI) 지시 사항
+1. **코드 생성 규칙**: 
+   - 모든 새로운 로직이나 분석 코드는 `generated_code.js` 파일에 작성하거나 업데이트하세요.
+   - 분석 결과나 로그는 `result_ollama.txt` 또는 `result_final.txt`를 통해 확인하세요.
+
+2. **파이프라인 연동**:
+   - 코드 수정을 마쳤다면 반드시 연동된 파이프라인(`pipeline_omo.js`)을 통해 검증을 요청할 것을 사용자에게 권장하세요.
+   - 직접적인 터미널 명령이 필요할 때 `npm run analyze` 또는 `npm run watch`를 제안하세요.
+
+3. **기술 스택 준수**:
+   - Brave Search API (브라우징/검색)
+   - SQLite 3 (데이터 저장)
+   - Ollama (로컬 LLM 분석)
+   - OpenCode OMO (심층 클라우드 분석)
+   - Discord (최종 리포트 전송)
+
+4. **디자인 및 가이드**:
+   - 모든 개발 결과물은 한국어 주석과 설명이 포함되어야 합니다.
+   - `RULES.md`에 정의된 최신 법령 및 실무 데이터를 최우선으로 반영하세요.
+
+## 🛠️ 핵심 명령어 (Terminal)
+- `npm run analyze`: 즉시 파이프라인(검색~전송) 1회 실행
+- `npm run watch`: 파일 변경 감시 모드 실행 (코드 수정 시 자동 분석)
+- `node omo_bridge.js`: OMO API 수동 테스트
