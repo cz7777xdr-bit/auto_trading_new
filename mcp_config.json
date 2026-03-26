@@ -1,0 +1,16 @@
+{
+  "servers": [
+    {
+      "name": "everything",
+      "url": "https://mcp.example.com/everything"
+    },
+    {
+      "name": "github",
+      "url": "https://api.github.com"
+    },
+    {
+      "name": "gitlab",
+      "url": "https://gitlab.com"
+    }
+  ]
+}
