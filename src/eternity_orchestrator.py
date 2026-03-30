@@ -15,10 +15,13 @@ class EternityOrchestrator:
         self.interval_seconds = 6 * 3600 # 6시간마다 1회 풀 사이클 가동
         self.pipeline_scripts = [
             "src/scanners/market_watcher.py",
+            "src/scanners/trend_hijacker.py",       # ⚡ 새로운 실시간 트렌드 포착기
             "src/intelligence/trend_analyzer.py",
             "src/utils/global_briefing_engine.py",
-            "src/utils/asset_resource_manager.py",
-            "src/utils/premium_renderer.py"
+            "src/utils/image_revenue_engine.py",    # 🎨 대량 이미지 생산 기지
+            "src/utils/asset_guardian.py",          # 🛡️ 자산 분류 및 워터마크 보호
+            "src/utils/premium_renderer.py",
+            "src/utils/quality_checker.py"          # 🔍 영상 품질 최종 검수 시스템
         ]
 
     def run_cycle(self):
