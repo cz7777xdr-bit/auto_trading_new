@@ -1,0 +1,31 @@
+name: Scheduled Business Assistant (Insurance)
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 1시간마다 가동되는 보험
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run-orchestrator:
+    name: "Eternity Loop"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup UV
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Run Orchestrator
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAYPAL_ACCOUNT: ${{ secrets.PAYPAL_ACCOUNT }}
+          GOOGLE_ACCOUNT: ${{ secrets.GOOGLE_ACCOUNT }}
+        run: |
+          uv run src/eternity_orchestrator.py
